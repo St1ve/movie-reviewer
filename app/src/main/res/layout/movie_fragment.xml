@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".movie.fragments.MovieFragment">
+    tools:context=".movie.searchmovies.MovieFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello world"
+        android:text="Movies"
         android:gravity="center"/>
 
 </FrameLayout>

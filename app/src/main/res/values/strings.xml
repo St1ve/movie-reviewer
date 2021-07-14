@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">movie-reviewer</string>
+    <string name="bottom_nav_movies">movies</string>
 </resources>
