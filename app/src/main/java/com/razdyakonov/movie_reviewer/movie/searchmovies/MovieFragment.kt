@@ -14,7 +14,7 @@ class MovieFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.movie_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_movie, container, false)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
