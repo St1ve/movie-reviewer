@@ -1,9 +1,12 @@
 package com.razdyakonov.movie_reviewer.movie.recyclerview
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.razdyakonov.movie_reviewer.R
 import com.razdyakonov.movie_reviewer.movie.model.Movie
 
@@ -20,6 +23,10 @@ class MovieAdapter(
         val item = getItem(position)
         holder.nameTextView.text = item.name
     }
+}
+
+class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val nameTextView: TextView = itemView.findViewById(R.id.movie_name_tv)
 }
 
 private class DiffCallback : DiffUtil.ItemCallback<Movie>() {
