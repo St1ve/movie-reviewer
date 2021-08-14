@@ -12,7 +12,7 @@ import com.razdyakonov.movie_reviewer.movie.model.Movie
 
 class MovieAdapter(
     private val layoutInflater: LayoutInflater
-) : ListAdapter<Movie, MovieViewHolder>(DiffCallback()) {
+) : ListAdapter<Movie, MovieViewHolder>(MovieDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = layoutInflater.inflate(R.layout.item_movie, parent, false)
@@ -21,15 +21,19 @@ class MovieAdapter(
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val item = getItem(position)
-        holder.nameTextView.text = item.name
+        holder.bind(item.name)
     }
 }
 
 class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val nameTextView: TextView = itemView.findViewById(R.id.movie_name_tv)
+    private val nameTextView: TextView = itemView.findViewById(R.id.movie_name_tv)
+
+    fun bind(movieName: String) {
+        nameTextView.text = movieName
+    }
 }
 
-private class DiffCallback : DiffUtil.ItemCallback<Movie>() {
+private class MovieDiffCallback : DiffUtil.ItemCallback<Movie>() {
     override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
         oldItem.id == newItem.id
 
